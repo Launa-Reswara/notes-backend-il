@@ -1,5 +1,6 @@
 import { pool } from "../lib/utils/pool.js";
 
+// get all notes
 export async function getNotes(_, res) {
   try {
     const [results] = await pool.query(`SELECT * FROM notes`);
@@ -18,6 +19,32 @@ export async function getNotes(_, res) {
     }
   } catch (err) {
     res.send({ statusCode: 400, message: "Failed to get all notes!" });
+  }
+}
+
+// get note by id
+export async function getNoteById(req, res) {
+  try {
+    const { id } = req.params;
+
+    const [results] = await pool.query(
+      `SELECT * FROM notes WHERE id = '${id}'`
+    );
+
+    if (results.length) {
+      res.send({
+        statusCode: 200,
+        message: "Success get note by id!",
+        data: results,
+      });
+    } else {
+      res.send({
+        statusCode: 404,
+        message: `The note with id = ${id} is not available!`,
+      });
+    }
+  } catch (err) {
+    res.send({ statusCode: 400, message: "Failed to get note by id!" });
   }
 }
 

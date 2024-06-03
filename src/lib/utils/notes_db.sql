@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2024 at 10:49 PM
+-- Generation Time: Jun 03, 2024 at 11:18 PM
 -- Server version: 8.0.37
 -- PHP Version: 8.2.19
 
@@ -42,7 +42,7 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `title`, `datetime`, `note`) VALUES
-(1, 'Test 123', '2024-06-03 23:32:30', 'Halo halo test');
+(2, 'Kubo Nagisa', '2024-06-03 06:00:20', 'Waifu saya');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +62,7 @@ ALTER TABLE `notes`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
