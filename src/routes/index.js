@@ -3,16 +3,18 @@ import {
   addNote,
   deleteNote,
   editNote,
+  getHome,
   getNoteById,
   getNotes,
 } from "../controllers/notes.controller.js";
 
 const routes = express.Router();
 
+routes.get("/api/v1", getHome);
 routes.get("/api/v1/notes", getNotes);
 routes.get("/api/v1/notes/:id", getNoteById);
 
-routes.post("/api/v1/notes", addNote);
+routes.post("/api/v1/notes/add", addNote);
 
 routes.patch("/api/v1/notes/edit/:id", editNote);
 
